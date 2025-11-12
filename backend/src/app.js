@@ -9,7 +9,7 @@ const cors=require('cors');
 // create instance of the server
 const app = express();
 app.use(cors({
-    origin: 'http://localhost:5173', // Replace with your frontend URL
+    origin: process.env.FRONTEND_URL || "http://localhost:5173", // Replace with your frontend URL
     credentials: true, // Allow cookies to be sent
 }));
 // cookie-parser is being used as a middleware
